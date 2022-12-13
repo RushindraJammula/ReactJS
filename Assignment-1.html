@@ -1,0 +1,163 @@
+<html>
+    <head>
+
+        <script>
+            //Javascript program to reverse a String
+            function strreverse(str) 
+{
+    return str.split("").reverse().join("");
+}
+console.log(strreverse("Rushindra Jammula"))
+
+//Javascript program to display all the prime numbers between 1 to 100
+function prime(){
+let count=0
+let i,j 
+var primecount = "";
+for(j=2;j<=100;j++)
+{
+for( i=1;i<=j;i++)
+{
+  if(j%i==0)
+  count++ 
+}
+if(count==2){
+    if (primecount == "") {
+	primecount =primecount+j;
+} else {
+	primecount =primecount+","+j
+}
+}
+
+//console.log(j)
+count=0  
+}
+return primecount;
+
+}
+console.log(prime()) 
+//Javascript program to test if the number entered by the user is an Armstrong number.
+
+function armstrong(num) {
+
+var digits = num.toString().split('')
+var realDigits = num
+var a = 0
+
+for (let i = 0; i < digits.length; i++){
+  digits[i] = Math.pow(digits[i], digits.length)
+  a += digits[i]
+}
+
+if (a == realDigits) {
+  console.log("Number is armstrong")
+} else if (a != realDigits) {
+  console.log("Number is not armstrong")
+}
+}
+armstrong(57);
+
+//Javascript program to test if the email entered by the user is valid.
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+    
+console.log(validateEmail('rushi@g.com')); // true
+   
+//display the current date and time.
+function datetime(){
+    var date = new Date().toLocaleDateString();
+    console.log(date)
+}
+datetime()
+
+//display the sum of a two numbers entered by the user on an alert box.
+
+function alertsum(){
+let number1 = prompt("Enter your 1st Number: ");
+    let number2 = prompt("Enter your 2nd Number: ");
+    let result = parseFloat(number1) + parseFloat(number2);
+    alert(result);
+}
+alertsum()
+
+// program to count the number of vowels in a string
+
+var vowels = ["a","e","i","o","u"];
+    function countVowel(str) {//test
+        // initialize count
+        let count = 0;
+        for (i = 0; i < vowels.length; i++) {//a
+            var vowelLength = 0;
+            var regex = new RegExp(vowels[i], 'g');  //e           
+            var m = str.match(regex);//array[e,e,e,e]
+            //console.log(m);
+            if (m != null) {
+                vowelLength = m.length;
+            }
+            console.log("vowel Count '" + vowels[i] + "' in given String : " + vowelLength);
+        }
+
+    }
+
+    // take input
+    const string = prompt('Enter a string: ');
+
+    countVowel(string);
+
+// Javascript program to print all the prime numbers between 1-1000 the sum of whose digits is also prime.
+
+function sumPrimeNumber() {
+            let count = 0
+            let i, j
+            var primeNumbersSumPrime = '';
+            for (j = 2; j <= 50; j++) {
+                for (i = 1; i <= j; i++) {
+                    if (j % i == 0) {
+                        count++
+                    }
+                }
+                if (count == 2) {
+                   // console.log(j);
+                    var primeNumers = j.toString().split('');
+                    //console.log("primeNumers ===="+primeNumers);
+                    var primeNumberSum=0;
+                    for (k = 0; k < primeNumers.length;k++) {
+                        primeNumberSum = primeNumberSum + parseInt(primeNumers[k]);
+                    }
+                    //console.log("primeNumberSum ====:"+primeNumberSum);
+                    var index = 0;
+                    for (l = 1; l <= primeNumberSum; l++) {//1
+                        //console.log("primeNumberSum % l" + primeNumberSum % l);
+                        if (primeNumberSum % l == 0) {
+                            index++
+                        }
+                    }
+                    if (index == 2) {
+                        if (primeNumbersSumPrime == '') {
+                            primeNumbersSumPrime = primeNumbersSumPrime + j;
+                        } else {
+                            primeNumbersSumPrime = primeNumbersSumPrime + "," + j;
+                        }
+                    }
+                    index = 0;
+
+                }
+                count = 0
+            }
+            return primeNumbersSumPrime;
+        }
+        console.log(sumPrimeNumber());
+
+</script>
+
+    </head>
+
+    <body>
+
+        hello master developer
+
+    </body>
+
+</html>
